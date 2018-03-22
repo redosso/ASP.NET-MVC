@@ -1,0 +1,102 @@
+Format JSON - odpowiedŸ serwisu:
+
+{"coord":{"lon":-0.13,"lat":51.51},"weather":[{"id":803,"main":"Clouds",
+"description":"broken clouds","icon":"04d"}],"base":"stations",
+"main":{"temp":282.25,"pressure":1020,"humidity":76,"temp_min":280.15,
+"temp_max":283.15},"visibility":10000,"wind":{"speed":5.7,"deg":300},
+"clouds":{"all":75},"dt":1521715800,"sys":{"type":1,"id":5168,"message":0.0053,
+"country":"GB","sunrise":1521698274,"sunset":1521742655},"id":2643743,"name":"London",
+"cod":200}
+
+Kody krajów s¹ podane wg: ISO 3166 country codes
+
+{
+"coord":{
+		"lon":-0.13,
+		"lat":51.51},
+"weather":[{
+		"id":803,
+		"main":"Clouds",
+		"description":"pochmurno z przejaœnieniami",
+		"icon":"04d"}],
+"base":"stations",
+"main":{
+		"temp":7.4,
+		"pressure":1029,
+		"humidity":49,
+		"temp_min":7,
+		"temp_max":8},
+"visibility":10000,
+"wind":{"speed":4.1,"deg":340},
+"clouds":{"all":75},
+"dt":1521557400,
+"sys":{
+		"type":1,
+		"id":5091,
+		"message":0.0077,
+		"country":"GB",
+		"sunrise":1521525725,
+		"sunset":1521569669},
+		"id":2643743, //GeoMaps
+		"name":"London",
+		"cod":200}
+
+public class Coord
+{
+    public double lon { get; set; }
+    public double lat { get; set; }
+}
+
+public class Weather
+{
+    public int id { get; set; }
+    public string main { get; set; }
+    public string description { get; set; }
+    public string icon { get; set; }
+}
+
+public class Main
+{
+    public double temp { get; set; }
+    public int pressure { get; set; }
+    public int humidity { get; set; }
+    public int temp_min { get; set; }
+    public int temp_max { get; set; }
+}
+
+public class Wind
+{
+    public double speed { get; set; }
+    public int deg { get; set; }
+}
+
+public class Clouds
+{
+    public int all { get; set; }
+}
+
+public class Sys
+{
+    public int type { get; set; }
+    public int id { get; set; }
+    public double message { get; set; }
+    public string country { get; set; }
+    public int sunrise { get; set; }
+    public int sunset { get; set; }
+}
+
+public class RootObject
+{
+    public Coord coord { get; set; }
+    public List<Weather> weather { get; set; }
+    public string @base { get; set; }
+    public Main main { get; set; }
+    public int visibility { get; set; }
+    public Wind wind { get; set; }
+    public Clouds clouds { get; set; }
+    public int dt { get; set; }
+    public Sys sys { get; set; }
+    public int id { get; set; }
+    public string name { get; set; }
+    public int cod { get; set; }
+}
